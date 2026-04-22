@@ -29,11 +29,9 @@ body.dark-mode {
 
 html, body {
     font-family: var(--mono-font);
-    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    transition: none;
 }
 
 body {
@@ -42,15 +40,16 @@ body {
     flex-direction: column;
     background-color: var(--bg-color);
     color: var(--text-primary);
-    transition: none;
 }
+
+/* ── HEADER ── */
 
 .top-header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--header-bg);
     flex-shrink: 0;
@@ -58,28 +57,33 @@ body {
 
 .brand h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .brand p {
-    margin: 5px 0 0 0;
+    margin: 4px 0 0;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
+
+/* ── NAV ── */
 
 nav[role="navigation"] {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
 }
 
 .nav-button {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
+    font-size: 0.85rem;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .nav-button:hover {
@@ -90,11 +94,11 @@ nav[role="navigation"] {
     background: none;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1.1rem;
-    margin-left: 15px;
+    font-size: 1rem;
+    margin-left: auto;
 }
 
 #theme-toggle:hover {
@@ -103,26 +107,28 @@ nav[role="navigation"] {
     border-color: var(--accent-color);
 }
 
+/* ── MAIN ── */
+
 main {
     flex: 1;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    padding: 24px 16px;
     text-align: center;
 }
 
 h2 {
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+    margin-bottom: 24px;
+    font-size: 1.3rem;
 }
+
+/* ── ICON GRID ── */
 
 .icon-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-    margin-bottom: 60px;
+    gap: 32px;
+    margin-bottom: 40px;
 }
 
 .icon-card {
@@ -131,7 +137,7 @@ h2 {
     align-items: center;
     text-decoration: none;
     color: var(--text-primary);
-    width: 100px;
+    width: 80px;
     transition: color 0.2s ease;
 }
 
@@ -140,39 +146,46 @@ h2 {
 }
 
 .icon-card i {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
+    margin-bottom: 8px;
 }
 
 .icon-card span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
+
+/* ── ABOUT / TIMELINE ── */
 
 .about-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 24px 16px;
     text-align: left;
 }
 
 .intro {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 36px;
 }
 
-.experience-section h2, 
+.intro p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.experience-section h2,
 .education-section h2 {
     text-align: left;
     border-bottom: 2px solid var(--timeline-border);
-    padding-bottom: 10px;
-    margin-top: 40px;
+    padding-bottom: 8px;
+    margin-top: 32px;
 }
 
 .timeline-item {
     background-color: var(--card-bg);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 16px;
+    margin-bottom: 16px;
     border-left: 4px solid var(--border-color);
     border-radius: 0 4px 4px 0;
     box-shadow: 0 1px 3px var(--card-shadow);
@@ -180,52 +193,161 @@ h2 {
 
 .timeline-item h3 {
     display: flex;
-    justify-content: space-between;
-    margin: 0 0 10px 0;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 10px;
+    font-size: 0.95rem;
 }
 
 .timeline-item h3 span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 
 .timeline-item ul {
     list-style-type: square;
-    padding-left: 20px;
+    padding-left: 18px;
     margin: 0;
     color: var(--text-secondary);
+    font-size: 0.9rem;
 }
+
+.timeline-item p {
+    color: var(--text-secondary);
+    margin: 12px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ── PROJECTS ── */
+
+.projects-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.projects-section h2 {
+    margin-bottom: 28px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: left;
+    margin-top: 16px;
+}
+
+/* ── FOOTER ── */
 
 .footer-content {
     width: 100%;
     text-align: center;
-    padding: 30px;
+    padding: 20px 16px;
     background-color: var(--header-bg);
     border-top: 1px solid var(--timeline-border);
     color: var(--text-secondary);
     margin-top: auto;
     flex-shrink: 0;
+    font-size: 0.85rem;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    text-align: left;
-    margin-top: 20px;
+/* ── TABLET  (≥600px) ── */
+
+@media (min-width: 600px) {
+    .top-header {
+        padding: 16px 32px;
+    }
+
+    nav[role="navigation"] {
+        gap: 16px;
+    }
+
+    .nav-button {
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 32px 24px;
+    }
+
+    .about-container {
+        padding: 32px 24px;
+    }
+
+    .timeline-item h3 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
 
-.projects-section {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* ── DESKTOP  (≥900px) ── */
 
-.projects-section h2 {
-    margin-bottom: 40px;
-}
+@media (min-width: 900px) {
+    .top-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        gap: 0;
+    }
 
-.timeline-item p {
-    color: var(--text-secondary);
-    margin: 15px 0;
-    font-size: 0.95rem;
+    #theme-toggle {
+        margin-left: 15px;
+    }
+
+    .brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .brand p {
+        font-size: 0.9rem;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-container {
+        padding: 40px 20px;
+    }
+
+    .icon-card {
+        width: 100px;
+    }
+
+    .icon-card i {
+        font-size: 3.5rem;
+    }
+
+    .icon-card span {
+        font-size: 0.9rem;
+    }
+
+    .icon-grid {
+        gap: 50px;
+        margin-bottom: 60px;
+    }
+
+    .projects-section {
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        padding: 30px;
+        font-size: 1rem;
+    }
 }

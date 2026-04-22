@@ -592,4 +592,120 @@ h2 {
         height: 260px;
     }
 }
+
+/* ── SKILLS PAGE ── */
+
+.skills-section {
+    margin-bottom: 40px;
+}
+
+.skills-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--timeline-border);
+    padding-bottom: 8px;
+    margin: 0 0 20px;
+    font-weight: 500;
+}
+
+/* ── GRID: 3 cols on mobile, 4 on tablet, 6 on desktop ── */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* ── CARD ── */
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--timeline-border);
+    border-radius: 8px;
+    padding: 18px 10px;
+    transition: border-color 0.2s ease, transform 0.1s ease;
+    cursor: default;
+}
+
+.skill-card:hover {
+    border-color: var(--accent-color);
+}
+
+/* ── ICON: fixed square, image fills it with contain ── */
+
+.skill-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-icon img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ── LABEL ── */
+
+.skill-name {
+    font-size: 0.75rem;
+    font-family: var(--mono-font);
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+/* ── TABLET (≥600px) ── */
+
+@media (min-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .skill-icon,
+    .skill-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* ── DESKTOP (≥900px) ── */
+
+@media (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 22px;
+    }
+
+    .skill-card {
+        padding: 22px 14px;
+    }
+
+    .skill-icon,
+    .skill-icon img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .skill-name {
+        font-size: 0.82rem;
+    }
+}
  

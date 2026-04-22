@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur DEMARCQ</title>
+    <title>Arthur DEMARCQ — Projects</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
@@ -26,15 +27,71 @@
     <main>
         <section class="projects-section">
             <h2>My Projects</h2>
-            
-            
+            <p class="projects-hint">Click on a project to read more.</p>
+
+            <div class="project-grid">
+
+                <article class="timeline-item project-card" data-project="pfsense">
+                    <h3>pfSense Firewall Setup <span>2025</span></h3>
+                    <p>Deployed and configured a pfSense firewall in a virtualised environment.</p>
+                    <div class="project-tags">
+                        <span class="tag">pfSense</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">Firewall</span>
+                    </div>
+                    <span class="card-cta">Read more →</span>
+                </article>
+
+                <article class="timeline-item project-card" data-project="openvpn">
+                    <h3>OpenVPN Tunnel <span>2025</span></h3>
+                    <p>Set up a self-hosted OpenVPN server with certificate-based authentication.</p>
+                    <div class="project-tags">
+                        <span class="tag">OpenVPN</span>
+                        <span class="tag">PKI</span>
+                        <span class="tag">Encryption</span>
+                    </div>
+                    <span class="card-cta">Read more →</span>
+                </article>
+
+                <article class="timeline-item project-card" data-project="ssh">
+                    <h3>SSH Alias Configuration <span>2025</span></h3>
+                    <p>Learnt to manage multiple SSH connections using <code>~/.ssh/config</code>.</p>
+                    <div class="project-tags">
+                        <span class="tag">SSH</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Sysadmin</span>
+                    </div>
+                    <span class="card-cta">Read more →</span>
+                </article>
+
+            </div>
         </section>
     </main>
 
+    <!-- ── MODAL OVERLAY ── -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-box">
+            <button class="modal-close" id="modal-close" aria-label="Close">&#x2715;</button>
+
+            <div class="modal-gallery" id="modal-gallery"></div>
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                    <span id="modal-date" class="modal-date"></span>
+                </div>
+                <p id="modal-description"></p>
+                <ul id="modal-bullets" class="modal-bullets"></ul>
+                <div id="modal-tags" class="project-tags"></div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer-content">
-        <p>Arthur DEMARCQ - Portfolio &middot; 2026</p>
+        <p>Arthur DEMARCQ — Portfolio &middot; 2026</p>
     </footer>
 
-    <script src="change-theme.js"></script>
+    <script src="js/change-theme.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 </html>

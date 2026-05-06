@@ -51,7 +51,7 @@ const projects = {
     },
 
     rust: {
-        title: "Currently : Learning Rust",
+        title: "Currently Learning Rust",
         date: "2026",
         description: "Work In Progress... (Will be updated soon) ",
         bullets: [
